@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Monserrat-Light';
+    src: url('../Fuentes/static/Montserrat-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Monserrat-Bold';
+    src: url('../Fuentes/static/Montserrat-Bold.ttf') format('truetype');
+}
+
+.content{
+    padding-top: 6%;
+}
+
+h1{
+    text-align: center;
+    font-family: "Monserrat-Light";
+}
+
+.box_text{
+    background-color: rgb(255, 245, 232);
+    text-align: justify;
+    font-family: "Monserrat-light";
+    padding: 1%;
+    margin-top: 0.5%;
+}

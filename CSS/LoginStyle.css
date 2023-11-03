@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'Monserrat-Light';
+    src: url('../Fuentes/static/Montserrat-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Monserrat-Bold';
+    src: url('../Fuentes/static/Montserrat-Bold.ttf') format('truetype');
+}
+
+body::before {
+    content: ""; /* Crea un pseudo-elemento */
+    background-color: rgba(0, 0, 0, 0.6); /* Color negro con transparencia (ajusta el último valor para cambiar la oscuridad) */
+    position: fixed; /* Fondo fijo para cubrir toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
+}
+
+body {
+    background-image: url('../Imagenes/Fondos/Fondo1.jpg'); /* Cambia el fondo a una imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-position: center; /* Centra la imagen en el fondo */
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: "Monserrat-Light";
+    font-size: 40px;
+}
+
+/* Estilo para los párrafos */
+p {
+    color: rgb(201, 201, 201);
+    text-align: center;
+    font-family: "Monserrat-Light";
+    font-size: 20px;
+}
+
+.FormStyle {
+    background-color: rgb(212, 212, 212, 0.1);
+    padding: 20px;
+    font-family: "Monserrat-Bold";
+    text-align: center;
+    color: rgb(255, 255, 255);
+    
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+input[type="text"],
+input[type="password"] {
+    border: none; /* Sin borde */
+    border-radius: 40px; /* Esquinas redondeadas */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: #ffffff; /* Fondo gris claro */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    width: 250px;
+}
+/* Estilo cuando se enfoca el campo de entrada */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    transform: scale(1.05);
+}
+
+/* Ejemplo de estilo para el botón de enviar */
+input[type="submit"] {
+    background-color: #ffffff; /* Fondo azul */
+    color: rgb(68, 68, 68); /* Texto blanco */
+    font-family: "Monserrat-Bold";
+    border: none; /* Sin borde */
+    border-radius: 50px; /* Esquinas redondeadas */
+    padding: 5px 15px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+}
+/* Efecto al pasar el ratón sobre el botón */
+input[type="submit"]:hover,
+input[type="text"]:hover,
+input[type="password"]:hover  {
+    transform: scale(1.05); /* Escala el botón ligeramente al pasar el ratón */
+}
