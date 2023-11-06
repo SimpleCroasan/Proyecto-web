@@ -40,6 +40,12 @@ body {
 
 }
 
+.menu .listaLogin {
+
+   width: 6vw;
+
+
+}
 
 
 .menu {
@@ -121,6 +127,8 @@ body {
    font-weight: bold;
    color: black;
    margin-left: 18vw;
+
+   width: 6vw;
 }
 
 
