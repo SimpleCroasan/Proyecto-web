@@ -20,6 +20,40 @@ request.onload = function () {
     }
 };
 
+function cambios() {
+
+
+    // Este código se ejecutará cuando se haya cargado todo el contenido de la página
+    document.addEventListener("DOMContentLoaded", function () {
+        // Verifica si el botón ha sido presionado
+        if (localStorage.getItem('botonPresionado') === 'true') {
+            // Si el botón ha sido presionado, cambia el texto del enlace
+            var enlace = document.querySelector('.login');
+            if (enlace) {
+                enlace.textContent = "Hola";
+            }
+
+            // Luego, borra la información del botón presionado del almacenamiento local
+            localStorage.removeItem('botonPresionado');
+        }
+
+        // Busca el botón en la página actual y agrega un escuchador de eventos
+        var boton = document.querySelector('input[name="submit2"]');
+        if (boton) {
+            boton.addEventListener('click', function () {
+                // Almacena la información de que el botón ha sido presionado
+                localStorage.setItem('botonPresionado', 'true');
+            });
+        }
+    });
+
+
+};
+
+
+
+
+
 function login() {
 
     let usuario = document.getElementById("Usuario");
@@ -29,26 +63,28 @@ function login() {
     for (let i = 0; i < datos.length; i++) {
 
 
-
-
         if (datos[i].email == usuario.value && datos[i].Password == contra.value) {
-
-
             contador++;
-            alert("win");
+            localStorage.setItem('loginExitoso', 'true');
+            localStorage.setItem('usuario', datos[i].User);
+
+
 
 
         };
-
-
-
-
     };
 
-    if (contador == 0) {
-        alert("¡Este es un mensaje emergente!");
+
+    document.querySelector('form').addEventListener('submit', function (event) {
+        if (contador == 0) {
+            alert("Datos incorrectos");
+            event.preventDefault();
+        };
+    });
 
 
-    };
+
 
 };
+
+
