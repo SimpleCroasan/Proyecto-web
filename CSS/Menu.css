@@ -2,6 +2,7 @@
    from {
       transform: translateX(100%);
    }
+
    to {
       transform: translateX(0%);
    }
@@ -14,79 +15,111 @@ body {
    background-color: #FFFAEE;
 }
 
-.menu{
+.menu li .menuVertical {
+   position: absolute;
+   display: none;
+   list-style: none;
+   width: 150px;
+   background-color: antiquewhite;
+   margin-left: 18vw;
+
+
+}
+
+.menu li .menuVertical li a {
+   display: block;
+   color: black;
+
+
+
+}
+
+.menu li:hover .menuVertical {
+   display: block;
+
+
+}
+
+
+
+.menu {
    position: fixed;
    font-family: Arial, Helvetica, sans-serif;
-   background-color:#ffe6da;
+   background-color: #ffe6da;
    padding-bottom: 70px;
    border-bottom: 5vw;
    width: 100vw;
-   animation: desplazar 0.6s ;
+   animation: desplazar 0.6s;
    z-index: 998;
 }
 
-.menu ul{
+.menu ul {
    text-align: left;
    list-style: none;
    width: 100vw;
-   max-width :100vw;
+   max-width: 100vw;
    margin: 0vw;
    display: inline-block;
    padding: 0vw;
-   
+
 }
 
-.menu li a{
+.menu li a {
    text-decoration: none;
-   color:black;
-   padding: 3vw ;
+   color: black;
+   padding: 3vw;
    display: block;
    margin: 0;
 }
 
-.menu li{
+.menu li {
    display: inline-block;
    margin: -1vw;
    text-align: center;
    padding: 0%;
-   
+
 }
-.menu li a:hover{
-   background-color: #fbcbab  ;
+
+.menu li a:hover {
+   background-color: #fbcbab;
    transition: transform 0.3s ease;
-   transform: scale(1.05); /* Escala el botón ligeramente al pasar el ratón */
+   transform: scale(1.05);
+
    transform-origin: center;
 }
-.menu li a:not(:hover){
+
+.menu li a:not(:hover) {
    transition: transform 0.3s ease;
 }
 
-.logo{
-   text-decoration:none;
+.logo {
+   text-decoration: none;
    font-size: 2em;
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    font-style: oblique;
    font-weight: bold;
-   color:rgb(59, 4, 4);
+   color: rgb(59, 4, 4);
    text-align: center;
    display: inline-block;
    margin-right: 18vw;
    margin-left: 4vw;
    transform: translateY(10%);
 }
-.logo:hover{
+
+.logo:hover {
    transition: transform 0.5s ease;
    transform: translate(0%, 10%) scale(1.2);
    transform-origin: center;
 }
-.logo:not(:hover){
+
+.logo:not(:hover) {
    transition: transform 0.3s ease;
 }
 
-.menu ul li .login{
+.menu ul li .login {
    text-decoration: none;
    font-weight: bold;
-   color:black;
+   color: black;
    margin-left: 18vw;
 }
 
@@ -96,43 +129,44 @@ body {
 
 
 @media screen and (min-width: 780px) {
-   #toggle-menu{
+   #toggle-menu {
       display: none;
    }
-   .icon{
-      display: none;
-   }
- }
 
-/* Estilos para pantallas pequeñas (ancho menor o igual a ciertos píxeles) */
+   .icon {
+      display: none;
+   }
+}
+
+
 @media screen and (max-width: 780px) {
    .menu li {
-     display: none; /* Oculta las opciones del menú */
+      display: none;
    }
- 
-   /* Estilos para mostrar el botón de hamburguesa */
+
+
    .icon {
-     display: block;
-     cursor: pointer;
-     font-size: 24px;
+      display: block;
+      cursor: pointer;
+      font-size: 24px;
 
-     position: absolute;
-     top: 50%; /* Alinea verticalmente al centro del div contenedor */
-     left: 95%; /* Alinea horizontalmente al centro del div contenedor */
-     transform: translate(-50%, -50%); /* Centra el elemento */
-     border: none;
-     padding: 0.7% ;
-     z-index: 999;
+      position: absolute;
+      top: 50%;
+      left: 95%;
+      transform: translate(-50%, -50%);
+      border: none;
+      padding: 0.7%;
+      z-index: 999;
 
    }
- 
-   /* Estilos para el input de la casilla de verificación */
+
+
    #toggle-menu {
-     display: none; /* Oculta el input de la casilla de verificación */
+      display: none;
    }
- 
-   /* Estilos para mostrar las opciones del menú cuando se marca la casilla */
-   #toggle-menu:checked + .icon + .menu li {
-     display: block;
+
+
+   #toggle-menu:checked+.icon+.menu li {
+      display: block;
    }
- }
+}
