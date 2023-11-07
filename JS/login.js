@@ -13,7 +13,7 @@ request.responseType = "json";
 request.onload = function () {
     if (request.status === 200) {
         datos = request.response.record;
-        console.log(datos);
+
 
     } else {
         console.error("Error en la solicitud:", request.status);
